@@ -1,0 +1,12 @@
+/target
+**/.direnv
+/.direnv
+**/tags
+tags
+
+# bv (beads viewer) local config and caches
+.bv/
+**/logs
+/target
+**/target
+/logs
