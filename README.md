@@ -21,6 +21,10 @@ This repo is an attempt to make the Shrine platform work using nock as its
 substrate. It is being released as a research object as nock is no longer
 considered viable for this use case.
 
+## License
+
+Copyright is retained by Axiomatic Systems. Licensed under the AGPLv3.
+
 ### Problems
 
 #### Memory management
