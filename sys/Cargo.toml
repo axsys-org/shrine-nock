@@ -1,0 +1,9 @@
+[package]
+name = "vere-sys"
+version.workspace = true
+edition.workspace = true
+links = "vere"
+
+[build-dependencies]
+bindgen = "0.72.1"
+

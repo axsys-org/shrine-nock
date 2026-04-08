@@ -1,0 +1,3 @@
+[submodule "sys/vere"]
+	path = sys/vere
+	url = https://github.com/axsys-org/vere
