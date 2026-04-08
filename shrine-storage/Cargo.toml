@@ -1,0 +1,44 @@
+[package]
+name = "shrine-storage"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+blake3 = "1.5"
+rusqlite = { version = "0.31", features = ["bundled"] }
+derive_everything.workspace = true
+thiserror.workspace = true
+milton = { path = "../vere" }
+bitflags = "2.10.0"
+arcstr = "1.2.0"
+lmdb = "0.8.0"
+bytemuck = { features = ["derive"], version = "1.24.0" }
+heed = "0.22.0"
+criterion = "0.5"
+proptest = "1.9.0"
+uuid = { version = "1.20.0", features = ["v4"] }
+roaring.workspace = true
+chrono = "0.4.43"
+tracing.workspace = true
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+rand = "0.8"
+tempfile = "3.10"
+
+[[bench]]
+name = "write_throughput"
+harness = false
+
+[[bench]]
+name = "read_latency"
+harness = false
+
+[[bench]]
+name = "propagation"
+harness = false
+
+[[bench]]
+name = "scalability"
+harness = false
+
