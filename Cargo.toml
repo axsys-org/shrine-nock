@@ -1,0 +1,23 @@
+[workspace]
+resolver = "2"
+# members = ["shrine-core", "shrine-protobuf", "shrine-storage", "shrine-tui", "sys", "vere", "shrine-debug"]
+
+members = ["shrine-core", "shrine-storage", "shrine-debug", "sys", "vere", "shrine-test"]
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+[workspace.dependencies]
+tokio = { version = "1.49.0", features = ["full", "rt"] }
+derive_everything = "0.1.2"
+thiserror = "2.0.18"
+roaring = "0.11.3"
+tracing = "0.1.44"
+heed = "0.22.0"
+
+[profile.release]
+debug = true
+# Patch gpui from crates.io to use the Zed git version
+# This ensures gpui-video-player uses the same gpui as shrine-gui
+# [patch.crates-io]
+# gpui = { git = "https://github.com/zed-industries/zed", package = "gpui" }

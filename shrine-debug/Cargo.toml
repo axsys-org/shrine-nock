@@ -1,0 +1,31 @@
+[package]
+name = "shrine-debug"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "shrine-debug"
+path = "src/main.rs"
+
+[dependencies]
+shrine-core = { path = "../shrine-core" }
+shrine-storage = { path = "../shrine-storage" }
+milton = { path = "../vere" }
+tokio.workspace = true
+thiserror = "1.0"
+async-trait = "0.1"
+hex = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+dirs = "5"
+infer = "0.16"
+url = "2"
+rustyline = "17.0.2"
+chrono = "0.4.43"
+clap = { version = "4.5.56", features = ["derive"] }
+clap_derive = "4.0.0-rc.1"
+tracing.workspace = true
+tracing-subscriber = { version = "0.3.22", features = ["env-filter", "fmt"] }
+tracing-appender = "0.2.4"
+notify = "6"
+
