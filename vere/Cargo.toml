@@ -1,0 +1,12 @@
+[package]
+name = "milton"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+vere-sys = { path = "../sys" }
+libc = "0.2"
+thiserror = "2.0.18"
+bytemuck = { version = "1.25.0", features = ["derive"] }
+tracing.workspace = true
+num = "0.4.3"
