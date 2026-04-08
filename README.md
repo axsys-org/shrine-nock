@@ -110,7 +110,19 @@ complex.
 
 
 ### Getting started
-This uses git submodules, please run
+This uses git submodules, please run `git submodule update --init`.
+
+To get a first build please run
+```bash
+direnv allow
+cd sys/vere
+zig build -Drelease
+cd ../..
+cargo build
+```
+
+
+
 
 #### hoon
 The hoon is all in the shrub/ subdirectory. Refer to build-help.hoon which is
