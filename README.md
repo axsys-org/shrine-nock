@@ -58,11 +58,11 @@ deeply suspect from an implementation POV.
 
 #### Stateful jet registration
 
-Because jet registration is stateful, a shrine implementation must two one of
+Because jet registration is stateful, a shrine implementation must do two one of
 two things:
 - Have all build systems output a `(trap vase)` instead of just a vase. This is
   deeply awful because if you do not globally deduplicate (which blocks the the
-  thread), then you will end up with jet state that is 10-100x than
+  thread), then you will end up with jet state that is 10-100x of the baseline.
 - Accept that nothing outside the stdlib will be jetted, and deduplicate vases.
 
 We chose the latter, writing a variant of jam/cue (jim/mew) which deduplicates
@@ -78,7 +78,7 @@ the internet". This fundamentally limits its scale and ambition. What counts as
 an event that should cause a state transition is fundamentally different
 depending on the scale of the computer you're thinking about.
 
-"That's fine, we can just have different distribution's depending on usecase"
+"That's fine, we can just have different distributions depending on usecase"
 
 The issue here is that a nock kernel has two sides. It has the nock defined
 event processing, and it has the (typically C) event construction.
