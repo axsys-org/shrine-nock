@@ -246,7 +246,6 @@ impl LmdbStore {
         next_parent.bump_y(ctx, true);
         let str = self.ancestry().path_string(wtxn, parent.clone())?.unwrap_or_else(|| "unknown".to_string());
 
-        println!("bumping y {str}");
 
         // will be marked changed when z iterates below
         // changed.insert(parent.raw());

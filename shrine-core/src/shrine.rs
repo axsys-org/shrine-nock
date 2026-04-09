@@ -139,7 +139,6 @@ unsafe extern "C" fn ffi_roof(case: u32, car: u32, pax: u32) -> u32 {
             }
         };
 
-        eprintln!("done {}", desc);
 
 
 
@@ -730,7 +729,6 @@ impl Shrine {
                 return Ok(());
             }
             if let Some(ovo) = self.queue.pop_front() {
-                eprintln!("ovo");
                 is_quiet = false;
                 self.step(ovo).await?;
                 continue;
@@ -747,7 +745,6 @@ impl Shrine {
             }
             match self.inbox.try_recv() {
                 Ok(commands) => {
-                    eprintln!("commands {commands:?}");
                     self.enqueue(commands.into_iter());
                 }
                 Err(mpsc::error::TryRecvError::Empty) => {
@@ -755,7 +752,6 @@ impl Shrine {
                         self.booted = true;
                         is_quiet = true;
                         for (_id,drv) in &self.drivers {
-                            eprintln!("on_quiet");
                             let _ = drv.tx.send(DriverSign::Quiet).await;
                         }
                     }

@@ -76,7 +76,7 @@ fn main() {
 
     println!("cargo:rustc-link-lib=static=noun");
     // Regenerate bindings if header changes
-    // println!("cargo:rerun-if-changed=vere");
+    println!("cargo:rerun-if-changed=vere/zig-out");
 
     let mut zig = Command::new("zig");
     zig.arg("build");
